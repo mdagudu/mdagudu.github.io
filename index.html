@@ -40,12 +40,12 @@ a{color:var(--accent);text-underline-offset:3px}
 .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);
   backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .bar-in,.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.bar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.bar-in{display:flex;align-items:center;justify-content:flex-end;gap:12px;padding-block:10px}
 .bar-name{font:700 15px var(--f-display);color:var(--ink);text-decoration:none}
 .sheetnav{display:flex;align-items:center;gap:8px;font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.06em}
 .sheetnav button{width:30px;height:30px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer;font:500 14px var(--f-mono)}
 .sheetnav button:hover{border-color:var(--accent);color:var(--accent)}
-#sheetLabel{min-width:118px;text-align:center}
+#sheetLabel{min-width:64px;text-align:center}
 
 section{padding-block:56px;border-bottom:1px dashed var(--line);scroll-margin-top:56px}
 section:last-of-type{border-bottom:0}
@@ -138,10 +138,9 @@ footer a{color:var(--muted)}
 
 <header class="bar">
   <div class="bar-in">
-    <a class="bar-name" href="#intro">Manisha Dagudu</a>
     <nav class="sheetnav" aria-label="Section navigation">
       <button type="button" id="prev" aria-label="Previous section">&larr;</button>
-      <span id="sheetLabel" aria-live="polite">Sheet 01 / 07</span>
+      <span id="sheetLabel" aria-live="polite">01 / 07</span>
       <button type="button" id="next" aria-label="Next section">&rarr;</button>
     </nav>
   </div>
@@ -150,7 +149,7 @@ footer a{color:var(--muted)}
 <main class="wrap">
 
 <section id="intro" class="hero" data-name="Intro">
-  <div class="tb"><b>Sheet 01</b><span>Intro</span></div>
+  <div class="tb"><span>Intro</span></div>
   <h1>Manisha Dagudu</h1>
   <p class="lead">I turn how a business works into a CRM people actually use.</p>
   <p class="intro">Salesforce Certified Administrator in Zurich, with 4 years in the Salesforce ecosystem. Trained as an architect, sharpened by an Executive MBA at the University of St.&nbsp;Gallen, and currently owning the Salesforce platform at a Swiss climate-tech company.</p>
@@ -161,7 +160,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section id="who" data-name="Who I am">
-  <div class="tb"><b>Sheet 02</b><span>Who I am</span></div>
+  <div class="tb"><span>Who I am</span></div>
   <h2>Four things that shape how I work</h2>
   <div class="cards">
     <details class="card">
@@ -184,7 +183,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section id="how" data-name="How I work">
-  <div class="tb"><b>Sheet 03</b><span>How I work</span></div>
+  <div class="tb"><span>How I work</span></div>
   <h2>Principles I bring to every CRM project</h2>
   <ol class="principles">
     <li><div><h3>Start with the process, not the tool</h3><p>I run conversations with the people doing the work, map the process end to end, and only then decide what to configure.</p></div></li>
@@ -196,7 +195,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section id="path" data-name="Path">
-  <div class="tb"><b>Sheet 04</b><span>Path</span></div>
+  <div class="tb"><span>Path</span></div>
   <h2>From drawing buildings to designing systems</h2>
   <ol class="timeline">
     <li class="now"><span class="yr">2025 – today</span><h3>Salesforce Product Owner &amp; No-Code Developer</h3><div class="org">Fedrok AG, Zurich</div><p>Own the Salesforce platform across Sales Cloud, Marketing Cloud Growth, Experience Cloud and Agentforce for a Swiss climate-tech company.</p></li>
@@ -208,7 +207,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section id="work" data-name="Selected work">
-  <div class="tb"><b>Sheet 05</b><span>Selected work</span></div>
+  <div class="tb"><span>Selected work</span></div>
   <h2>Things I've built</h2>
   <div class="work">
     <article class="proj feature">
@@ -242,7 +241,7 @@ footer a{color:var(--muted)}
 </section>
 
 <section id="skills" data-name="Skills">
-  <div class="tb"><b>Sheet 06</b><span>Skills</span></div>
+  <div class="tb"><span>Skills</span></div>
   <h2>Toolkit</h2>
   <div class="skills">
     <div class="skill-row"><h3>Salesforce platform</h3><ul class="tags"><li>Administration</li><li>Users, roles &amp; permissions</li><li>Security</li><li>Data model</li><li>Record types &amp; layouts</li></ul></div>
@@ -261,16 +260,13 @@ footer a{color:var(--muted)}
 </section>
 
 <section id="contact" class="contact" data-name="Contact">
-  <div class="tb"><b>Sheet 07</b><span>Contact</span></div>
+  <div class="tb"><span>Contact</span></div>
   <h2>Let's talk about your CRM</h2>
   <p style="color:var(--muted);margin-bottom:22px">Open to Salesforce, CRM and business systems roles in the Zurich area, remote or hybrid.</p>
   <div class="contact-grid">
     <div class="crow">
       <div><span class="k">Email</span><span class="v blur" id="email" aria-label="Email hidden until revealed">manishadagudu@gmail.com</span></div>
       <button type="button" class="btn" id="emailBtn">Show email</button>
-    </div>
-    <div class="crow">
-      <div><span class="k">Phone</span><span class="v">+41 77 985 77 15</span></div>
     </div>
     <div class="crow">
       <div><span class="k">LinkedIn</span><span class="v">linkedin.com/in/manisha-dagudu</span></div>
@@ -287,7 +283,7 @@ footer a{color:var(--muted)}
   var secs=[].slice.call(document.querySelectorAll('main section'));
   var label=document.getElementById('sheetLabel'), cur=0, n=secs.length;
   function pad(i){return (i<10?'0':'')+i}
-  function set(i){cur=i;label.textContent='Sheet '+pad(i+1)+' / '+pad(n)}
+  function set(i){cur=i;label.textContent=pad(i+1)+' / '+pad(n)}
   function onScroll(){
     var y=window.innerHeight*0.35, idx=0;
     secs.forEach(function(s,i){ if(s.getBoundingClientRect().top<=y) idx=i; });

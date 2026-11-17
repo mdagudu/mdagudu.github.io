@@ -7,22 +7,17 @@
 <title>Manisha Dagudu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: a set of drawing sheets. A single reading column on a plain background; each section is a "sheet" with a title-block label. */
 :root{
-  --paper:#F3F5F6; --surface:#FFFFFF; --ink:#16232B; --muted:#56656E;
-  --line:#D5DDE1; --grid:rgba(22,62,84,.055); --accent:#0E5E73; --accent-soft:#E2EEF1; --mark:#C4572F;
-  --f-display:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --paper:#FFFFFF; --surface:#FBFAF7; --ink:#1A2033; --muted:#646A78;
+  --line:#E8E3D8; --accent:#1F2E4D; --accent-soft:#EEF1F6; --mark:#9C7A3C;
+  --f-display:"Playfair Display", Georgia, "Times New Roman", serif;
   --f-body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#0C1A24; --surface:#112432; --ink:#E4EDF1; --muted:#97AAB5;
-  --line:#23394A; --grid:rgba(140,200,225,.07); --accent:#6CC3D8; --accent-soft:#16323F; --mark:#E8875F; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#0C1A24; --surface:#112432; --ink:#E4EDF1; --muted:#97AAB5;
-  --line:#23394A; --grid:rgba(140,200,225,.07); --accent:#6CC3D8; --accent-soft:#16323F; --mark:#E8875F; color-scheme:dark}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -45,7 +40,7 @@ a{color:var(--accent);text-underline-offset:3px}
 .sheetnav button:hover{border-color:var(--accent);color:var(--accent)}
 #sheetLabel{min-width:64px;text-align:center}
 
-section{padding-block:56px;border-bottom:1px dashed var(--line);scroll-margin-top:56px}
+section{padding-block:56px;border-bottom:1px solid var(--line);scroll-margin-top:56px}
 section:last-of-type{border-bottom:0}
 .tb{display:flex;gap:10px;align-items:baseline;font:500 11.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
 .tb b{color:var(--mark);font-weight:500}
@@ -54,7 +49,7 @@ p{margin:0;max-width:65ch}
 
 /* Hero */
 .hero{padding-block:72px 60px}
-.hero h1{font:700 clamp(40px,7.5vw,74px)/1 var(--f-display);margin:0 0 8px;letter-spacing:-.025em}
+.hero h1{font:600 clamp(40px,7.5vw,74px)/1 var(--f-display);margin:0 0 8px;letter-spacing:-.025em}
 .hero .lead{font:500 clamp(20px,3vw,27px)/1.3 var(--f-display);color:var(--accent);margin:18px 0 18px;max-width:28ch;text-wrap:balance}
 .hero p.intro{color:var(--muted);font-size:17px}
 .dim{display:flex;align-items:center;gap:10px;margin:30px 0 22px;font:400 11.5px var(--f-mono);color:var(--muted);letter-spacing:.08em}
@@ -92,7 +87,7 @@ ol.principles li::before{content:counter(p,decimal-leading-zero);font:500 13px v
 .timeline li{position:relative;padding:0 0 28px 34px}
 .timeline li:last-child{padding-bottom:0}
 .timeline li::before{content:"";position:absolute;left:2px;top:7px;width:11px;height:11px;border:2px solid var(--accent);background:var(--paper);border-radius:50%}
-.timeline li.now::before{background:var(--accent)}
+.timeline li.now::before{background:var(--mark);border-color:var(--mark)}
 .yr{font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.06em}
 .timeline h3{font:700 18px/1.3 var(--f-display);margin:2px 0 4px}
 .timeline .org{font-weight:500;color:var(--accent)}
@@ -101,7 +96,7 @@ ol.principles li::before{content:counter(p,decimal-leading-zero);font:500 13px v
 /* Work */
 .work{display:grid;gap:16px}
 .proj{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:22px 24px}
-.proj.feature{border-left:3px solid var(--accent)}
+.proj.feature{border-left:3px solid var(--mark)}
 .proj .badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .proj .badges span{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:var(--accent-soft);color:var(--accent)}
 .proj h3{font:700 21px/1.25 var(--f-display);margin:0 0 8px}

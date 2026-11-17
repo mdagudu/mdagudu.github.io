@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Manisha Dagudu – Salesforce and CRM specialist in Zurich">
+<title>Manisha Dagudu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a set of drawing sheets. An architect's drafting grid behind a single reading column; each section is a "sheet" with a title-block label. */
+:root{
+  --paper:#F3F5F6; --surface:#FFFFFF; --ink:#16232B; --muted:#56656E;
+  --line:#D5DDE1; --grid:rgba(22,62,84,.055); --accent:#0E5E73; --accent-soft:#E2EEF1; --mark:#C4572F;
+  --f-display:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --f-body:"IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0C1A24; --surface:#112432; --ink:#E4EDF1; --muted:#97AAB5;
+  --line:#23394A; --grid:rgba(140,200,225,.07); --accent:#6CC3D8; --accent-soft:#16323F; --mark:#E8875F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0C1A24; --surface:#112432; --ink:#E4EDF1; --muted:#97AAB5;
+  --line:#23394A; --grid:rgba(140,200,225,.07); --accent:#6CC3D8; --accent-soft:#16323F; --mark:#E8875F; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{
+  margin:0;
+  background-color:var(--paper); color:var(--ink); font:400 16px/1.6 var(--f-body);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px;
+}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+a{color:var(--accent);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--mark);outline-offset:3px;border-radius:2px}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.bar-in,.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.bar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.bar-name{font:700 15px var(--f-display);color:var(--ink);text-decoration:none}
+.sheetnav{display:flex;align-items:center;gap:8px;font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.06em}
+.sheetnav button{width:30px;height:30px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer;font:500 14px var(--f-mono)}
+.sheetnav button:hover{border-color:var(--accent);color:var(--accent)}
+#sheetLabel{min-width:118px;text-align:center}
+
+section{padding-block:56px;border-bottom:1px dashed var(--line);scroll-margin-top:56px}
+section:last-of-type{border-bottom:0}
+.tb{display:flex;gap:10px;align-items:baseline;font:500 11.5px var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.tb b{color:var(--mark);font-weight:500}
+h2{font:700 clamp(26px,4vw,34px)/1.15 var(--f-display);margin:0 0 22px;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0;max-width:65ch}
+
+/* Hero */
+.hero{padding-block:72px 60px}
+.hero h1{font:700 clamp(40px,7.5vw,74px)/1 var(--f-display);margin:0 0 8px;letter-spacing:-.025em}
+.hero .lead{font:500 clamp(20px,3vw,27px)/1.3 var(--f-display);color:var(--accent);margin:18px 0 18px;max-width:28ch;text-wrap:balance}
+.hero p.intro{color:var(--muted);font-size:17px}
+.dim{display:flex;align-items:center;gap:10px;margin:30px 0 22px;font:400 11.5px var(--f-mono);color:var(--muted);letter-spacing:.08em}
+.dim::before,.dim::after{content:"";height:1px;background:var(--muted);flex:1;opacity:.5}
+.dim span{white-space:nowrap}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.tags li{font:500 13px var(--f-body);padding:5px 11px;border:1px solid var(--line);border-radius:3px;background:var(--surface)}
+.tags.accent li{border-color:transparent;background:var(--accent-soft);color:var(--accent)}
+
+/* Who I am */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:620px){.cards{grid-template-columns:1fr}.dim{display:none}}
+details.card{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:18px 20px}
+details.card[open]{border-color:var(--accent)}
+details.card summary{list-style:none;cursor:pointer;display:grid;gap:4px}
+details.card summary::-webkit-details-marker{display:none}
+.card .k{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card .v{font:700 19px/1.25 var(--f-display)}
+.card .more{font:500 12px var(--f-mono);color:var(--accent);margin-top:8px}
+.card .more::after{content:" +"}
+details.card[open] .more::after{content:" –"}
+.card p{margin-top:12px;color:var(--muted);font-size:15px}
+
+/* How I work */
+ol.principles{list-style:none;padding:0;margin:0;display:grid;gap:0;counter-reset:p}
+ol.principles li{counter-increment:p;display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;padding:20px 0;border-top:1px solid var(--line)}
+ol.principles li:first-child{border-top:0;padding-top:4px}
+ol.principles li::before{content:counter(p,decimal-leading-zero);font:500 13px var(--f-mono);color:var(--mark);padding-top:5px}
+.principles h3{font:700 19px/1.3 var(--f-display);margin:0 0 6px}
+.principles p{color:var(--muted);font-size:15.5px}
+
+/* Path */
+.timeline{list-style:none;padding:0;margin:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 28px 34px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:2px;top:7px;width:11px;height:11px;border:2px solid var(--accent);background:var(--paper);border-radius:50%}
+.timeline li.now::before{background:var(--accent)}
+.yr{font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.06em}
+.timeline h3{font:700 18px/1.3 var(--f-display);margin:2px 0 4px}
+.timeline .org{font-weight:500;color:var(--accent)}
+.timeline p{color:var(--muted);font-size:15px}
+
+/* Work */
+.work{display:grid;gap:16px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:22px 24px}
+.proj.feature{border-left:3px solid var(--accent)}
+.proj .badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.proj .badges span{font:500 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:2px;background:var(--accent-soft);color:var(--accent)}
+.proj h3{font:700 21px/1.25 var(--f-display);margin:0 0 8px}
+.proj p{color:var(--muted);font-size:15.5px}
+.proj ul{margin:12px 0 0;padding-left:18px;color:var(--ink);font-size:15px;display:grid;gap:4px}
+.proj-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:720px){.proj-grid{grid-template-columns:1fr}}
+.proj-grid .proj h3{font-size:18px}
+
+/* Skills */
+.skills{display:grid;gap:18px}
+.skill-row{display:grid;grid-template-columns:170px minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:620px){.skill-row{grid-template-columns:1fr;gap:8px}}
+.skill-row h3{font:500 12px/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:6px 0 0}
+.certs{margin-top:34px}
+.certs h3{font:700 18px var(--f-display);margin:0 0 12px}
+
+/* Contact */
+.contact h2{max-width:20ch}
+.contact-grid{display:grid;gap:12px;max-width:560px;margin-top:8px}
+.crow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:14px 16px}
+.crow .k{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block}
+.crow .v{font:500 16px var(--f-body);word-break:break-all}
+.btn{font:500 13px var(--f-body);padding:7px 14px;border-radius:4px;border:1px solid var(--accent);background:var(--accent);color:var(--paper);cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--accent)}
+.blur{filter:blur(6px);user-select:none}
+footer{padding-block:30px 40px;font:400 12px var(--f-mono);color:var(--muted);letter-spacing:.05em}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="bar-name" href="#intro">Manisha Dagudu</a>
+    <nav class="sheetnav" aria-label="Section navigation">
+      <button type="button" id="prev" aria-label="Previous section">&larr;</button>
+      <span id="sheetLabel" aria-live="polite">Sheet 01 / 07</span>
+      <button type="button" id="next" aria-label="Next section">&rarr;</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="intro" class="hero" data-name="Intro">
+  <div class="tb"><b>Sheet 01</b><span>Intro</span></div>
+  <h1>Manisha Dagudu</h1>
+  <p class="lead">I turn how a business works into a CRM people actually use.</p>
+  <p class="intro">Salesforce Certified Administrator in Zurich, with 4 years in the Salesforce ecosystem. Trained as an architect, sharpened by an Executive MBA at the University of St.&nbsp;Gallen, and currently owning the Salesforce platform at a Swiss climate-tech company.</p>
+  <div class="dim" aria-hidden="true"><span>Business need</span><span>&rarr;</span><span>Process</span><span>&rarr;</span><span>Platform</span><span>&rarr;</span><span>Adoption</span></div>
+  <ul class="tags accent">
+    <li>Salesforce Administration</li><li>CRM Operations</li><li>Process Automation</li><li>Data Quality</li><li>Marketing Operations</li>
+  </ul>
+</section>
+
+<section id="who" data-name="Who I am">
+  <div class="tb"><b>Sheet 02</b><span>Who I am</span></div>
+  <h2>Four things that shape how I work</h2>
+  <div class="cards">
+    <details class="card">
+      <summary><span class="k">Foundation</span><span class="v">Architect turned CRM builder</span><span class="more">What that means</span></summary>
+      <p>Architecture taught me to understand how people move through a space before drawing anything. I bring the same habit to CRM: map how the business really works, then design the system around it.</p>
+    </details>
+    <details class="card">
+      <summary><span class="k">Way of working</span><span class="v">Startup generalist</span><span class="more">What that means</span></summary>
+      <p>In a startup I wear several hats: platform owner, analyst, trainer and sparring partner for sales, marketing, onboarding and compliance teams. I move easily between business conversations and hands-on configuration.</p>
+    </details>
+    <details class="card">
+      <summary><span class="k">Credentials</span><span class="v">5x certified, still learning</span><span class="more">What that means</span></summary>
+      <p>Salesforce Administrator, Marketing Cloud Engagement, Agentforce, AI Associate and Platform Foundations, plus Agentblazer Legend 2025 and Certified ScrumMaster. I keep up with the platform as it moves, especially AI.</p>
+    </details>
+    <details class="card">
+      <summary><span class="k">Motivation</span><span class="v">Work with a purpose</span><span class="more">What that means</span></summary>
+      <p>I work in climate tech because contributing to something I believe in is what keeps me motivated day to day. I'm drawn to teams whose work matters beyond the next quarter.</p>
+    </details>
+  </div>
+</section>
+
+<section id="how" data-name="How I work">
+  <div class="tb"><b>Sheet 03</b><span>How I work</span></div>
+  <h2>Principles I bring to every CRM project</h2>
+  <ol class="principles">
+    <li><div><h3>Start with the process, not the tool</h3><p>I run conversations with the people doing the work, map the process end to end, and only then decide what to configure.</p></div></li>
+    <li><div><h3>Clean data comes first</h3><p>Validation rules, duplicate checks and careful imports. A dashboard is only as good as the records behind it.</p></div></li>
+    <li><div><h3>Automate the repetitive parts</h3><p>Flows for onboarding, KYC and pre-sales take manual steps off people's desks so they can focus on customers.</p></div></li>
+    <li><div><h3>Adoption is the finish line</h3><p>A feature isn't done when it's deployed. It's done when people use it, so I test, train and gather feedback.</p></div></li>
+    <li><div><h3>Document it so it lasts</h3><p>Clear documentation and user guides mean the system doesn't depend on one person to keep running.</p></div></li>
+  </ol>
+</section>
+
+<section id="path" data-name="Path">
+  <div class="tb"><b>Sheet 04</b><span>Path</span></div>
+  <h2>From drawing buildings to designing systems</h2>
+  <ol class="timeline">
+    <li class="now"><span class="yr">2025 – today</span><h3>Salesforce Product Owner &amp; No-Code Developer</h3><div class="org">Fedrok AG, Zurich</div><p>Own the Salesforce platform across Sales Cloud, Marketing Cloud Growth, Experience Cloud and Agentforce for a Swiss climate-tech company.</p></li>
+    <li><span class="yr">2024 – 2025</span><h3>Salesforce Consultant &amp; No-Code Developer</h3><div class="org">Headswap</div><p>Configured CRM environments, built automation, reports and dashboards, and supported users through training and adoption.</p></li>
+    <li><span class="yr">2023 – 2024</span><h3>Salesforce Hands-On Training</h3><div class="org">BWBW / Salesforce</div><p>Intensive practical training across administration, configuration and automation.</p></li>
+    <li><span class="yr">2022 – 2023</span><h3>Executive MBA (CAS)</h3><div class="org">University of St. Gallen</div><p>Business strategy and management, the commercial lens I bring to every system decision.</p></li>
+    <li><span class="yr">1997 – 2001</span><h3>Bachelor of Architecture</h3><div class="org">Pune University</div><p>Where I learned to design around how people actually work and move.</p></li>
+  </ol>
+</section>
+
+<section id="work" data-name="Selected work">
+  <div class="tb"><b>Sheet 05</b><span>Selected work</span></div>
+  <h2>Things I've built</h2>
+  <div class="work">
+    <article class="proj feature">
+      <div class="badges"><span>Experience Cloud</span><span>Flow</span><span>Compliance</span></div>
+      <h3>Digital KYC onboarding portal</h3>
+      <p>A self-service portal where external users complete their KYC onboarding online, backed by automated workflows inside Salesforce.</p>
+      <ul>
+        <li>Experience Cloud portal with a guided onboarding journey</li>
+        <li>Flow automation for KYC, vendor and ambassador onboarding</li>
+        <li>Fewer manual steps and a standardised process for the team</li>
+      </ul>
+    </article>
+    <div class="proj-grid">
+      <article class="proj">
+        <div class="badges"><span>Marketing Cloud Growth</span></div>
+        <h3>Consent-based campaigns</h3>
+        <p>Lead generation campaigns with double opt-in journeys and email building.</p>
+      </article>
+      <article class="proj">
+        <div class="badges"><span>Data quality</span></div>
+        <h3>Reliable CRM data</h3>
+        <p>Data imports, cleansing, validation and duplicate checks, plus reports and dashboards teams rely on.</p>
+      </article>
+      <article class="proj">
+        <div class="badges"><span>AI enablement</span></div>
+        <h3>Einstein for sales teams</h3>
+        <p>Rolled out Einstein Activity Capture and Conversation Insights and helped users adopt them.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" data-name="Skills">
+  <div class="tb"><b>Sheet 06</b><span>Skills</span></div>
+  <h2>Toolkit</h2>
+  <div class="skills">
+    <div class="skill-row"><h3>Salesforce platform</h3><ul class="tags"><li>Administration</li><li>Users, roles &amp; permissions</li><li>Security</li><li>Data model</li><li>Record types &amp; layouts</li></ul></div>
+    <div class="skill-row"><h3>Clouds &amp; AI</h3><ul class="tags"><li>Sales Cloud</li><li>Marketing Cloud Growth</li><li>Experience Cloud</li><li>Agentforce</li><li>Einstein</li></ul></div>
+    <div class="skill-row"><h3>Automation &amp; data</h3><ul class="tags"><li>Salesforce Flow</li><li>Validation rules</li><li>Data imports</li><li>Duplicate management</li><li>Reports &amp; dashboards</li></ul></div>
+    <div class="skill-row"><h3>Integrations</h3><ul class="tags"><li>Zapier</li><li>Amazon Connect</li><li>Postman</li></ul></div>
+    <div class="skill-row"><h3>Ways of working</h3><ul class="tags"><li>Requirements analysis</li><li>Stakeholder management</li><li>User training</li><li>Documentation</li><li>Agile / Scrum</li></ul></div>
+    <div class="skill-row"><h3>Languages</h3><ul class="tags"><li>English, fluent</li><li>German, working proficiency</li></ul></div>
+  </div>
+  <div class="certs">
+    <h3>Certifications</h3>
+    <ul class="tags accent">
+      <li>Salesforce Platform Administrator</li><li>Marketing Cloud Engagement Specialist</li><li>Agentforce Specialist</li><li>AI Associate</li><li>Platform Foundations</li><li>Agentblazer Legend 2025</li><li>Certified ScrumMaster</li><li>VQF AML Advanced Compliance</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="contact" data-name="Contact">
+  <div class="tb"><b>Sheet 07</b><span>Contact</span></div>
+  <h2>Let's talk about your CRM</h2>
+  <p style="color:var(--muted);margin-bottom:22px">Open to Salesforce, CRM and business systems roles in the Zurich area, remote or hybrid.</p>
+  <div class="contact-grid">
+    <div class="crow">
+      <div><span class="k">Email</span><span class="v blur" id="email" aria-label="Email hidden until revealed">manishadagudu@gmail.com</span></div>
+      <button type="button" class="btn" id="emailBtn">Show email</button>
+    </div>
+    <div class="crow">
+      <div><span class="k">Phone</span><span class="v">+41 77 985 77 15</span></div>
+    </div>
+    <div class="crow">
+      <div><span class="k">LinkedIn</span><span class="v">linkedin.com/in/manisha-dagudu</span></div>
+      <a class="btn ghost" href="https://www.linkedin.com/in/manisha-dagudu" target="_blank" rel="noopener">Open profile</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="wrap">Manisha Dagudu · Zurich, Switzerland · <a href="#intro">Back to top</a></footer>
+
+<script>
+(function(){
+  var secs=[].slice.call(document.querySelectorAll('main section'));
+  var label=document.getElementById('sheetLabel'), cur=0, n=secs.length;
+  function pad(i){return (i<10?'0':'')+i}
+  function set(i){cur=i;label.textContent='Sheet '+pad(i+1)+' / '+pad(n)}
+  function onScroll(){
+    var y=window.innerHeight*0.35, idx=0;
+    secs.forEach(function(s,i){ if(s.getBoundingClientRect().top<=y) idx=i; });
+    if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4) idx=n-1;
+    if(idx!==cur) set(idx);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); set(0); onScroll();
+  function go(i){ i=Math.max(0,Math.min(n-1,i)); secs[i].scrollIntoView({behavior:'smooth',block:'start'}); set(i); }
+  document.getElementById('prev').addEventListener('click',function(){go(cur-1)});
+  document.getElementById('next').addEventListener('click',function(){go(cur+1)});
+
+  var email=document.getElementById('email'), btn=document.getElementById('emailBtn'), shown=false;
+  btn.addEventListener('click',function(){
+    if(!shown){ email.classList.remove('blur'); email.removeAttribute('aria-label'); btn.textContent='Copy'; shown=true; return; }
+    var txt=email.textContent;
+    function sel(){ var r=document.createRange(); r.selectNodeContents(email); var s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='Selected'; }
+    try{ navigator.clipboard.writeText(txt).then(function(){btn.textContent='Copied'},sel); }catch(e){ sel(); }
+  });
+})();
+</script>
+</body>
+</html>

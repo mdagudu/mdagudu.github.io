@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: a set of drawing sheets. An architect's drafting grid behind a single reading column; each section is a "sheet" with a title-block label. */
+/* Layout: a set of drawing sheets. A single reading column on a plain background; each section is a "sheet" with a title-block label. */
 :root{
   --paper:#F3F5F6; --surface:#FFFFFF; --ink:#16232B; --muted:#56656E;
   --line:#D5DDE1; --grid:rgba(22,62,84,.055); --accent:#0E5E73; --accent-soft:#E2EEF1; --mark:#C4572F;
@@ -30,8 +30,6 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   background-color:var(--paper); color:var(--ink); font:400 16px/1.6 var(--f-body);
-  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:24px 24px;
 }
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
 a{color:var(--accent);text-underline-offset:3px}
